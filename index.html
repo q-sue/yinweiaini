@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="音为爱你，为乡村儿童提供个性化合唱教学、AI简易创作工坊、作品管理、排练协作和情感陪伴。"
+    />
+    <title>音为爱你</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=ZCOOL+XiaoWei&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="主导航">
+        <a class="brand" href="#top" aria-label="音为爱你首页">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="./assets/yinweiaijni.svg" alt="" width="58" height="50" />
+          </span>
+          <span>
+            <strong>音为爱你</strong>
+            <small>AI 合唱教室</small>
+          </span>
+        </a>
+
+        <button class="sidebar-action" type="button" data-scroll="#studio">
+          <i data-lucide="sparkles" aria-hidden="true"></i>
+          <span>创建一首合唱</span>
+        </button>
+
+        <nav class="nav-list" aria-label="功能导航">
+          <span class="nav-section-label">学习</span>
+          <a class="nav-link active" href="#coach">
+            <i data-lucide="mic-2" aria-hidden="true"></i>
+            <span>合唱教学</span>
+          </a>
+          <a class="nav-link" href="#studio">
+            <i data-lucide="wand-sparkles" aria-hidden="true"></i>
+            <span>创作工坊</span>
+          </a>
+          <a class="nav-link" href="#explore">
+            <i data-lucide="compass" aria-hidden="true"></i>
+            <span>灵感广场</span>
+          </a>
+
+          <span class="nav-section-label">作品</span>
+          <a class="nav-link" href="#library">
+            <i data-lucide="library" aria-hidden="true"></i>
+            <span>作品库</span>
+          </a>
+          <a class="nav-link" href="#rehearsal">
+            <i data-lucide="calendar-check" aria-hidden="true"></i>
+            <span>排练日程</span>
+          </a>
+
+          <span class="nav-section-label">陪伴</span>
+          <a class="nav-link" href="#treehole">
+            <i data-lucide="heart-handshake" aria-hidden="true"></i>
+            <span>情感树洞</span>
+          </a>
+          <a class="nav-link" href="#report">
+            <i data-lucide="line-chart" aria-hidden="true"></i>
+            <span>成长报告</span>
+          </a>
+          <a class="nav-link" href="#volunteer">
+            <i data-lucide="users-round" aria-hidden="true"></i>
+            <span>志愿者协作</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-mini-grid" aria-label="项目概览">
+          <div class="sidebar-mini-card">
+            <span>本周作品</span>
+            <strong>12 首</strong>
+          </div>
+          <div class="sidebar-mini-card">
+            <span>待点评</span>
+            <strong>5 条</strong>
+          </div>
+        </div>
+
+        <div class="sidebar-status" aria-label="今日学习状态">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>今日已练习 <strong id="todayMinutes">18</strong> 分钟</span>
+        </div>
+      </aside>
+
+      <main class="main" id="main">
+        <header class="topbar" id="top">
+          <div>
+            <p class="eyebrow">AI music companion for rural choir learning</p>
+            <h1>音为爱你</h1>
+          </div>
+          <div class="top-actions" aria-label="全局操作">
+            <button class="icon-button" type="button" id="readHero" aria-label="朗读今日鼓励">
+              <i data-lucide="volume-2" aria-hidden="true"></i>
+            </button>
+            <button class="primary-action" type="button" data-scroll="#coach">
+              <i data-lucide="play" aria-hidden="true"></i>
+              <span>开始练唱</span>
+            </button>
+          </div>
+        </header>
+
+        <section class="hero-band view-active" data-view="coach" aria-labelledby="heroTitle">
+          <div class="hero-copy">
+            <p class="section-kicker">山村合唱课堂</p>
+            <h2 id="heroTitle">
+              <span>一句句听见进步</span>
+              <span>一天天唱稳声部</span>
+            </h2>
+            <p>
+              上传练唱、生成童声旋律、收到温柔反馈。系统会把音准、节奏、咬字、情绪陪伴、作品沉淀和志愿者交接放在同一个音乐工作台里。
+            </p>
+            <div class="hero-metrics" aria-label="项目成效指标">
+              <span><strong>86%</strong> 作业提交预测</span>
+              <span><strong>2</strong> 声部自动编排</span>
+              <span><strong>双语</strong> 普通话与云南方言</span>
+            </div>
+          </div>
+          <div class="hero-visual" aria-label="课堂与AI点评预览">
+            <img class="hero-image" src="./assets/1.png" alt="乡村儿童合唱演出现场" />
+            <div class="floating-panel coach-preview" aria-label="AI点评示例">
+              <span class="panel-label">AI逐句点评</span>
+              <strong>这句像清亮的小溪，结尾再稳一点。</strong>
+              <div class="mini-score">
+                <span>音准</span>
+                <meter value="82" min="0" max="100">82%</meter>
+              </div>
+              <div class="mini-score">
+                <span>节奏</span>
+                <meter value="76" min="0" max="100">76%</meter>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="workspace-grid view-active" data-view="coach" aria-label="AI合唱学习工作台">
+          <section class="panel panel-wide" id="coach" aria-labelledby="coachTitle">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">Personalized choir coach</p>
+                <h2 id="coachTitle">AI 个性化合唱教学</h2>
+              </div>
+              <div class="segmented" role="group" aria-label="教学语言">
+                <button class="segment active" type="button" data-dialect="mandarin">普通话</button>
+                <button class="segment" type="button" data-dialect="yunnan">云南方言</button>
+              </div>
+            </div>
+
+            <div class="coach-layout">
+              <form class="upload-zone" id="practiceForm">
+                <input
+                  id="practiceFile"
+                  type="file"
+                  accept="audio/*,video/*"
+                  aria-describedby="uploadHint"
+                />
+                <label for="practiceFile">
+                  <span class="upload-icon" aria-hidden="true">
+                    <i data-lucide="upload-cloud"></i>
+                  </span>
+                  <strong>上传练唱语音或视频</strong>
+                  <span id="uploadHint">支持音频与视频，点击后自动生成逐句点评</span>
+                </label>
+                <div class="record-row">
+                  <button class="secondary-action" type="button" id="recordPractice">
+                    <i data-lucide="radio" aria-hidden="true"></i>
+                    <span>录一段</span>
+                  </button>
+                  <button class="primary-action" type="submit">
+                    <i data-lucide="sparkles" aria-hidden="true"></i>
+                    <span>AI点评</span>
+                  </button>
+                </div>
+                <p class="form-note" id="recordStatus" aria-live="polite">等待练唱音频</p>
+              </form>
+
+              <div class="feedback-console" aria-live="polite">
+                <div class="waveform" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="coach-message" id="coachMessage">
+                  先上传一段练唱，AI老师会用小朋友听得懂的话给出音准、节奏和咬字建议。
+                </div>
+                <div class="score-grid" aria-label="练唱评分">
+                  <div>
+                    <span>音准</span>
+                    <strong id="pitchScore">--</strong>
+                  </div>
+                  <div>
+                    <span>节奏</span>
+                    <strong id="rhythmScore">--</strong>
+                  </div>
+                  <div>
+                    <span>咬字</span>
+                    <strong id="dictionScore">--</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sentence-list" id="sentenceList" aria-label="逐句点评"></div>
+          </section>
+
+          <section class="panel" aria-labelledby="levelTitle">
+            <div class="panel-heading compact">
+              <div>
+                <p class="section-kicker">Daily plan</p>
+                <h2 id="levelTitle">分级练习计划</h2>
+              </div>
+              <button class="icon-button" type="button" id="refreshPlan" aria-label="刷新练习计划">
+                <i data-lucide="rotate-cw" aria-hidden="true"></i>
+              </button>
+            </div>
+            <label class="field-label" for="levelSelect">儿童当前水平</label>
+            <select id="levelSelect" class="select-input">
+              <option value="starter">入门：刚开始合唱</option>
+              <option value="growing">进阶：能稳定跟唱</option>
+              <option value="lead">领唱：可带同学排练</option>
+            </select>
+            <div class="plan-list" id="planList"></div>
+            <div class="reminder-row">
+              <label class="field-label" for="reminderTime">打卡提醒</label>
+              <input class="time-input" type="time" id="reminderTime" value="19:30" />
+              <button class="secondary-action" type="button" id="setReminder">
+                <i data-lucide="bell-ring" aria-hidden="true"></i>
+                <span>设置</span>
+              </button>
+            </div>
+            <p class="form-note" id="reminderStatus" aria-live="polite">提醒尚未开启</p>
+          </section>
+        </section>
+
+        <section class="panel panel-full" id="studio" data-view="studio" aria-labelledby="studioTitle">
+          <div class="panel-heading">
+            <div>
+              <p class="section-kicker">AI creation studio</p>
+              <h2 id="studioTitle">AI 简易创作工坊</h2>
+            </div>
+            <button class="secondary-action" type="button" id="voiceKeywords">
+              <i data-lucide="audio-lines" aria-hidden="true"></i>
+              <span>说关键词</span>
+            </button>
+          </div>
+
+          <div class="studio-grid">
+            <form class="creator-form" id="lyricsForm">
+              <label class="field-label" for="keywordInput">关键词</label>
+              <textarea
+                id="keywordInput"
+                rows="4"
+                maxlength="120"
+                placeholder="大山、星星、妈妈、学校"
+              ></textarea>
+              <div class="chip-row" aria-label="快捷关键词">
+                <button type="button" class="keyword-chip">大山</button>
+                <button type="button" class="keyword-chip">星星</button>
+                <button type="button" class="keyword-chip">妈妈</button>
+                <button type="button" class="keyword-chip">学校</button>
+                <button type="button" class="keyword-chip">稻田</button>
+                <button type="button" class="keyword-chip">伙伴</button>
+              </div>
+              <button class="primary-action fill" type="submit">
+                <i data-lucide="pen-line" aria-hidden="true"></i>
+                <span>一键写词</span>
+              </button>
+            </form>
+
+            <div class="lyrics-output" aria-label="歌词输出">
+              <div class="output-toolbar">
+                <span>合唱歌词</span>
+                <button class="icon-button" type="button" id="copyLyrics" aria-label="复制歌词">
+                  <i data-lucide="copy" aria-hidden="true"></i>
+                </button>
+              </div>
+              <pre id="lyricsText">输入关键词后生成四句押韵歌词。</pre>
+            </div>
+
+            <div class="melody-output" aria-label="旋律与和弦">
+              <div class="output-toolbar">
+                <span>简谱与和弦</span>
+                <button class="icon-button" type="button" id="playDemo" aria-label="播放儿童声示例">
+                  <i data-lucide="play-circle" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="jianpu" id="jianpuLine">1 2 3 5 | 6 5 3 2 | 1 - - -</div>
+              <div class="chords" id="chordLine">C · G · Am · F</div>
+              <div class="voice-map" id="voiceMap">
+                <span>高声部：主旋律</span>
+                <span>低声部：三度下行</span>
+              </div>
+            </div>
+
+            <div class="sample-library" aria-label="儿童示例曲库">
+              <div class="output-toolbar">
+                <span>儿歌示例曲库</span>
+                <button class="icon-button" type="button" id="playSongDemo" aria-label="播放儿歌示范">
+                  <i data-lucide="headphones" aria-hidden="true"></i>
+                </button>
+              </div>
+              <label class="field-label" for="sampleSongSelect">示范曲目</label>
+              <select id="sampleSongSelect" class="select-input">
+                <option value="twinkle">小星星</option>
+                <option value="frere">两只老虎</option>
+                <option value="ode">欢乐颂</option>
+                <option value="mary">玛丽有只小羊羔</option>
+              </select>
+              <div class="sample-song-card" id="sampleSongInfo">
+                <strong>小星星 · 童声音色模拟</strong>
+                <span>适合入门齐唱，音域窄，孩子容易跟唱。</span>
+              </div>
+            </div>
+
+            <div class="creation-settings" aria-label="创作参数">
+              <div class="output-toolbar">
+                <span>创作参数</span>
+                <i data-lucide="sliders-horizontal" aria-hidden="true"></i>
+              </div>
+              <label class="field-label" for="styleSelect">歌曲感觉</label>
+              <select id="styleSelect" class="select-input">
+                <option value="warm">温暖叙事</option>
+                <option value="bright">明亮童声</option>
+                <option value="quiet">安静陪伴</option>
+                <option value="march">轻快行进</option>
+              </select>
+              <label class="field-label" for="tempoSelect">速度</label>
+              <select id="tempoSelect" class="select-input">
+                <option value="slow">慢速练习</option>
+                <option value="medium" selected>课堂常速</option>
+                <option value="lively">轻快表演</option>
+              </select>
+            </div>
+
+            <div class="arrangement-output" aria-label="合唱编排">
+              <div class="output-toolbar">
+                <span>编排提示</span>
+                <button class="icon-button" type="button" id="downloadScore" aria-label="下载合唱谱文本">
+                  <i data-lucide="download" aria-hidden="true"></i>
+                </button>
+              </div>
+              <ol id="arrangementList">
+                <li>第 1 句全员齐唱，双手自然打开。</li>
+                <li>第 2 句高低声部分开，低声部轻轻托住。</li>
+                <li>结尾收在弱拍，动作回到胸前。</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel panel-full feature-panel" id="explore" data-view="explore" aria-labelledby="exploreTitle">
+          <div class="panel-heading">
+            <div>
+              <p class="section-kicker">Inspiration feed</p>
+              <h2 id="exploreTitle">灵感广场</h2>
+            </div>
+            <button class="secondary-action" type="button" data-scroll="#studio">
+              <i data-lucide="plus-circle" aria-hidden="true"></i>
+              <span>从灵感开始创作</span>
+            </button>
+          </div>
+
+          <div class="prompt-bar" aria-label="灵感搜索">
+            <i data-lucide="search" aria-hidden="true"></i>
+            <input id="explorePrompt" type="text" value="大山 星星 妈妈 学校" aria-label="输入创作灵感" />
+            <button class="primary-action" type="button" id="exploreCreate">
+              <i data-lucide="wand-2" aria-hidden="true"></i>
+              <span>生成一版</span>
+            </button>
+          </div>
+
+          <div class="theme-chip-row" aria-label="热门创作风格">
+            <button type="button" class="theme-chip" data-use-keywords="云南童声、山风、伙伴、学校">云南童声</button>
+            <button type="button" class="theme-chip" data-use-keywords="山歌旋律、梯田、月亮、回声">山歌旋律</button>
+            <button type="button" class="theme-chip" data-use-keywords="轻快校园、操场、书包、铃声">轻快校园</button>
+            <button type="button" class="theme-chip" data-use-keywords="六一、鲜花、掌声、梦想">节日祝福</button>
+            <button type="button" class="theme-chip" data-use-keywords="低声部、小河、稳稳、合唱">低声部练习</button>
+          </div>
+
+          <div class="song-feed" aria-label="推荐合唱灵感">
+            <article class="song-card featured">
+              <div class="song-cover">
+                <i data-lucide="mountain-snow" aria-hidden="true"></i>
+              </div>
+              <div class="song-card-body">
+                <div class="song-card-head">
+                  <div>
+                    <span>入门齐唱</span>
+                    <h3>山谷里的星光</h3>
+                  </div>
+                  <button class="icon-button" type="button" data-demo-song="twinkle" aria-label="试听山谷里的星光">
+                    <i data-lucide="play" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <p>用《小星星》的熟悉旋律做二声部启蒙，歌词替换成山路、星星和学校，适合第一次上台。</p>
+                <div class="mini-meta">
+                  <span>72 BPM</span>
+                  <span>普通话 + 云南方言</span>
+                  <span>2 个动作提示</span>
+                </div>
+                <button class="secondary-action" type="button" data-use-keywords="山谷、星光、学校、伙伴">
+                  <i data-lucide="pen-line" aria-hidden="true"></i>
+                  <span>用这个主题写词</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="song-card">
+              <div class="song-cover coral">
+                <i data-lucide="footprints" aria-hidden="true"></i>
+              </div>
+              <div class="song-card-body">
+                <div class="song-card-head">
+                  <div>
+                    <span>轮唱练习</span>
+                    <h3>去学校的路</h3>
+                  </div>
+                  <button class="icon-button" type="button" data-demo-song="frere" aria-label="试听去学校的路">
+                    <i data-lucide="play" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <p>两组孩子错开进入，练习听同伴、等入口，适合低年级合唱课堂。</p>
+                <div class="mini-meta">
+                  <span>轮唱</span>
+                  <span>8 分钟排练</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="song-card">
+              <div class="song-cover sun">
+                <i data-lucide="home" aria-hidden="true"></i>
+              </div>
+              <div class="song-card-body">
+                <div class="song-card-head">
+                  <div>
+                    <span>温暖叙事</span>
+                    <h3>妈妈的窗前灯</h3>
+                  </div>
+                  <button class="icon-button" type="button" data-demo-song="mary" aria-label="试听妈妈的窗前灯">
+                    <i data-lucide="play" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <p>短句清楚、咬字轻快，把想家情绪转成可以唱出来的小故事。</p>
+                <div class="mini-meta">
+                  <span>童声独唱起</span>
+                  <span>合唱回应</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="song-card">
+              <div class="song-cover plum">
+                <i data-lucide="party-popper" aria-hidden="true"></i>
+              </div>
+              <div class="song-card-body">
+                <div class="song-card-head">
+                  <div>
+                    <span>表演曲</span>
+                    <h3>六一小合唱</h3>
+                  </div>
+                  <button class="icon-button" type="button" data-demo-song="ode" aria-label="试听六一小合唱">
+                    <i data-lucide="play" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <p>明亮收束、整齐进入，适合班级汇演、毕业季和节日祝福片段。</p>
+                <div class="mini-meta">
+                  <span>明亮合唱</span>
+                  <span>队形提示</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel panel-full" id="library" data-view="library" aria-labelledby="libraryTitle">
+          <div class="panel-heading">
+            <div>
+              <p class="section-kicker">Song library</p>
+              <h2 id="libraryTitle">作品库</h2>
+            </div>
+            <div class="segmented" role="group" aria-label="作品筛选">
+              <button class="segment active" type="button">全部</button>
+              <button class="segment" type="button">待排练</button>
+              <button class="segment" type="button">可演出</button>
+            </div>
+          </div>
+
+          <div class="library-toolbar" aria-label="作品库概览">
+            <div>
+              <span>班级作品</span>
+              <strong>12 首</strong>
+            </div>
+            <div>
+              <span>本周新建</span>
+              <strong>4 首</strong>
+            </div>
+            <div>
+              <span>已生成示范音频</span>
+              <strong>9 段</strong>
+            </div>
+          </div>
+
+          <div class="library-list" aria-label="作品列表">
+            <article class="library-row">
+              <div class="library-title">
+                <i data-lucide="music" aria-hidden="true"></i>
+                <div>
+                  <strong>山谷里的星光</strong>
+                  <span>二声部 · 入门齐唱 · 最后编辑 10 分钟前</span>
+                </div>
+              </div>
+              <div class="library-status ready">可排练</div>
+              <div class="library-actions">
+                <button class="icon-button" type="button" data-demo-song="twinkle" aria-label="播放山谷里的星光">
+                  <i data-lucide="play" aria-hidden="true"></i>
+                </button>
+                <button class="secondary-action" type="button" data-use-keywords="山谷、星光、伙伴、学校">
+                  <i data-lucide="edit-3" aria-hidden="true"></i>
+                  <span>继续编辑</span>
+                </button>
+              </div>
+            </article>
+            <article class="library-row">
+              <div class="library-title">
+                <i data-lucide="music-2" aria-hidden="true"></i>
+                <div>
+                  <strong>去学校的路</strong>
+                  <span>轮唱 · 云南方言版 · 最后编辑 昨天</span>
+                </div>
+              </div>
+              <div class="library-status draft">需试听</div>
+              <div class="library-actions">
+                <button class="icon-button" type="button" data-demo-song="frere" aria-label="播放去学校的路">
+                  <i data-lucide="play" aria-hidden="true"></i>
+                </button>
+                <button class="secondary-action" type="button" data-use-keywords="学校、小路、书包、伙伴">
+                  <i data-lucide="edit-3" aria-hidden="true"></i>
+                  <span>继续编辑</span>
+                </button>
+              </div>
+            </article>
+            <article class="library-row">
+              <div class="library-title">
+                <i data-lucide="music-3" aria-hidden="true"></i>
+                <div>
+                  <strong>妈妈的窗前灯</strong>
+                  <span>情感陪伴曲 · 童声独唱起 · 最后编辑 周一</span>
+                </div>
+              </div>
+              <div class="library-status review">待志愿者听</div>
+              <div class="library-actions">
+                <button class="icon-button" type="button" data-demo-song="mary" aria-label="播放妈妈的窗前灯">
+                  <i data-lucide="play" aria-hidden="true"></i>
+                </button>
+                <button class="secondary-action" type="button" data-use-keywords="妈妈、窗前、灯光、想家">
+                  <i data-lucide="edit-3" aria-hidden="true"></i>
+                  <span>继续编辑</span>
+                </button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="workspace-grid" id="rehearsal" data-view="rehearsal" aria-label="排练日程">
+          <section class="panel panel-wide" aria-labelledby="rehearsalTitle">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">Rehearsal planner</p>
+                <h2 id="rehearsalTitle">排练日程</h2>
+              </div>
+              <button class="secondary-action" type="button" id="syncRehearsal">
+                <i data-lucide="calendar-plus" aria-hidden="true"></i>
+                <span>同步本周计划</span>
+              </button>
+            </div>
+
+            <div class="timeline-list">
+              <article class="timeline-item active">
+                <span>今天 19:30</span>
+                <div>
+                  <strong>《山谷里的星光》第一段</strong>
+                  <p>目标：高声部唱准 5-6-5，低声部只哼 “lu”，不急着填词。</p>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <span>周三 18:50</span>
+                <div>
+                  <strong>轮唱入口训练</strong>
+                  <p>两组相隔两小节进入，AI 先播放示范，再让孩子逐组跟唱。</p>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <span>周五 20:00</span>
+                <div>
+                  <strong>节日祝福录音</strong>
+                  <p>录 30 秒合唱片段，自动生成给家长和老师的祝福音频。</p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="panel" aria-labelledby="taskTitle">
+            <div class="panel-heading compact">
+              <div>
+                <p class="section-kicker">Class checklist</p>
+                <h2 id="taskTitle">课堂检查单</h2>
+              </div>
+              <i data-lucide="list-checks" aria-hidden="true"></i>
+            </div>
+            <div class="task-board">
+              <label><input type="checkbox" checked /> 先听 1 遍童声示范</label>
+              <label><input type="checkbox" checked /> 慢速练第二句节奏</label>
+              <label><input type="checkbox" /> 录制高低声部各 20 秒</label>
+              <label><input type="checkbox" /> 标记需要人工点评的孩子</label>
+            </div>
+            <div class="rehearsal-tip">
+              <strong>AI 建议</strong>
+              <span>今晚不要一次纠正太多，先让孩子完整唱完，再只讲“结尾慢半拍”。</span>
+            </div>
+          </section>
+        </section>
+
+        <section class="workspace-grid" data-view="treehole">
+          <section class="panel" id="treehole" aria-labelledby="treeTitle">
+            <div class="panel-heading compact">
+              <div>
+                <p class="section-kicker">Companion treehole</p>
+                <h2 id="treeTitle">AI 情感陪伴树洞</h2>
+              </div>
+              <button class="icon-button" type="button" id="speakCompanion" aria-label="朗读树洞回应">
+                <i data-lucide="message-circle-heart" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="mood-row" aria-label="今日心情">
+              <label class="field-label" for="moodRange">今日心情</label>
+              <input id="moodRange" type="range" min="1" max="5" value="4" />
+              <span id="moodLabel">有一点开心</span>
+            </div>
+            <div class="quick-prompts" aria-label="快捷倾诉">
+              <button type="button" class="quick-prompt" data-prompt="今天有点不想上学，但我也不知道为什么">不想上学</button>
+              <button type="button" class="quick-prompt" data-prompt="我有点想妈妈，练歌的时候心里酸酸的">想家了</button>
+              <button type="button" class="quick-prompt" data-prompt="快表演了，我怕自己唱错">表演紧张</button>
+              <button type="button" class="quick-prompt" data-prompt="今天练完歌有点累，想被鼓励一下">想被鼓励</button>
+            </div>
+            <div class="chat-window" id="chatWindow" aria-live="polite">
+              <div class="bubble ai">
+                今天练完歌，可以把心里的小烦恼告诉我。你不用一次说很多，我会慢慢听。
+              </div>
+            </div>
+            <form class="chat-form" id="chatForm">
+              <label class="sr-only" for="chatInput">树洞留言</label>
+              <input id="chatInput" type="text" placeholder="比如：今天不太想上学" />
+              <button class="icon-button send" type="submit" aria-label="发送留言">
+                <i data-lucide="send-horizontal" aria-hidden="true"></i>
+              </button>
+            </form>
+          </section>
+
+          <section class="panel" aria-labelledby="festivalTitle">
+            <div class="panel-heading compact">
+              <div>
+                <p class="section-kicker">Festival voice</p>
+                <h2 id="festivalTitle">节日定制祝福</h2>
+              </div>
+              <button class="icon-button" type="button" id="playBlessing" aria-label="播放祝福音频">
+                <i data-lucide="music-4" aria-hidden="true"></i>
+              </button>
+            </div>
+            <label class="field-label" for="festivalSelect">节日场景</label>
+            <select id="festivalSelect" class="select-input">
+              <option value="birthday">生日</option>
+              <option value="children">六一</option>
+              <option value="graduation">毕业季</option>
+            </select>
+            <label class="field-label" for="childName">孩子名字</label>
+            <input class="text-input" id="childName" type="text" value="小云" />
+            <button class="primary-action fill" type="button" id="generateBlessing">
+              <i data-lucide="gift" aria-hidden="true"></i>
+              <span>生成祝福片段</span>
+            </button>
+            <div class="blessing-card" id="blessingText">
+              小云，愿你的歌声像清晨的山风，带着勇气和光。
+            </div>
+            <div class="care-board" aria-label="关怀交接">
+              <strong>今日关怀提醒</strong>
+              <span>如果连续 3 次出现“不想上学/很累”，建议志愿者课前 3 分钟单独问候。</span>
+              <span>树洞内容只做陪伴提示，严重情绪需要转给老师或监护人。</span>
+            </div>
+          </section>
+        </section>
+
+        <section class="panel panel-full" id="report" data-view="report" aria-labelledby="reportTitle">
+          <div class="panel-heading">
+            <div>
+              <p class="section-kicker">Growth report</p>
+              <h2 id="reportTitle">可视化成长报告</h2>
+            </div>
+            <div class="report-tabs" role="group" aria-label="报告周期">
+              <button class="segment active" type="button" data-report="week">本周</button>
+              <button class="segment" type="button" data-report="month">本月</button>
+            </div>
+          </div>
+
+          <div class="report-grid">
+            <div class="growth-card">
+              <span>练唱稳定度</span>
+              <strong id="stabilityValue">78%</strong>
+              <div class="bar-track"><span style="--value: 78%"></span></div>
+            </div>
+            <div class="growth-card">
+              <span>原创歌词数</span>
+              <strong id="lyricsCount">6 首</strong>
+              <div class="bar-track"><span style="--value: 64%"></span></div>
+            </div>
+            <div class="growth-card">
+              <span>打卡连续天数</span>
+              <strong id="checkinDays">9 天</strong>
+              <div class="bar-track"><span style="--value: 72%"></span></div>
+            </div>
+          </div>
+
+          <div class="chart-area" aria-label="成长趋势图">
+            <svg viewBox="0 0 880 220" role="img" aria-labelledby="chartTitle chartDesc">
+              <title id="chartTitle">近七天合唱成长趋势</title>
+              <desc id="chartDesc">音准、节奏、情绪三条趋势整体上升。</desc>
+              <g class="grid-lines">
+                <line x1="40" y1="30" x2="840" y2="30"></line>
+                <line x1="40" y1="80" x2="840" y2="80"></line>
+                <line x1="40" y1="130" x2="840" y2="130"></line>
+                <line x1="40" y1="180" x2="840" y2="180"></line>
+              </g>
+              <polyline class="line pitch" points="40,150 170,132 300,138 430,105 560,96 690,78 840,60"></polyline>
+              <polyline class="line rhythm" points="40,166 170,154 300,124 430,118 560,90 690,84 840,72"></polyline>
+              <polyline class="line mood" points="40,140 170,126 300,112 430,112 560,82 690,72 840,52"></polyline>
+              <g class="chart-labels">
+                <text x="40" y="210">周一</text>
+                <text x="300" y="210">周三</text>
+                <text x="560" y="210">周五</text>
+                <text x="820" y="210">周日</text>
+              </g>
+            </svg>
+            <div class="legend" aria-label="趋势图图例">
+              <span><i class="legend-dot pitch-dot"></i>音准</span>
+              <span><i class="legend-dot rhythm-dot"></i>节奏</span>
+              <span><i class="legend-dot mood-dot"></i>自信</span>
+            </div>
+          </div>
+
+          <div class="report-extra-grid" aria-label="成长补充摘要">
+            <article class="report-note">
+              <span>本周亮点</span>
+              <strong>愿意主动唱低声部</strong>
+              <p>第 4 次练习后，孩子能等待同伴进入，合唱稳定度提升明显。</p>
+            </article>
+            <article class="report-note">
+              <span>成长徽章</span>
+              <strong>节奏小队长</strong>
+              <p>连续 3 天完成慢速节拍练习，适合在小组里带拍手训练。</p>
+            </article>
+            <article class="report-note">
+              <span>志愿者交接</span>
+              <strong>先鼓励，再纠错</strong>
+              <p>下次课先听一遍完整演唱，再指出第二句节奏，不要一开始打断。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="workspace-grid" id="volunteer" data-view="volunteer" aria-label="志愿者协作台">
+          <section class="panel panel-wide" aria-labelledby="volunteerTitle">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">Volunteer handoff</p>
+                <h2 id="volunteerTitle">志愿者协作</h2>
+              </div>
+              <button class="secondary-action" type="button" id="copyHandoff">
+                <i data-lucide="clipboard-check" aria-hidden="true"></i>
+                <span>复制交接摘要</span>
+              </button>
+            </div>
+
+            <div class="handoff-board">
+              <article class="handoff-card urgent">
+                <span>需要人工介入</span>
+                <strong>小云连续 3 次提到“不想上学”</strong>
+                <p>AI 已完成温和陪伴，建议志愿者下次课前单独问候，并同步老师关注到校状态。</p>
+              </article>
+              <article class="handoff-card">
+                <span>教学重点</span>
+                <strong>第二句节奏提前半拍</strong>
+                <p>先播放慢速示范，再让孩子拍手读词，最后回到原速合唱。</p>
+              </article>
+              <article class="handoff-card">
+                <span>作品进度</span>
+                <strong>3 首作品可进入排练</strong>
+                <p>《山谷里的星光》已生成简谱、和弦、童声示范和动作提示。</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="panel" aria-labelledby="queueTitle">
+            <div class="panel-heading compact">
+              <div>
+                <p class="section-kicker">Review queue</p>
+                <h2 id="queueTitle">待处理队列</h2>
+              </div>
+              <i data-lucide="inbox" aria-hidden="true"></i>
+            </div>
+            <div class="queue-list">
+              <article>
+                <strong>5 条练唱待抽查</strong>
+                <span>AI 已初评，建议只抽查分数低于 76 的片段。</span>
+              </article>
+              <article>
+                <strong>2 条树洞需老师关注</strong>
+                <span>包含厌学、想家关键词，已隐藏敏感原文，仅保留关怀提示。</span>
+              </article>
+              <article>
+                <strong>1 首作品待定稿</strong>
+                <span>歌词已完成，低声部入口还需志愿者确认。</span>
+              </article>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
